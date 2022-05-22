@@ -1,0 +1,28 @@
+#端口
+server:
+  port: 11180
+#spring相关配置
+spring:
+  application:
+    name: system_service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test_lw?serverTimezone=UTC&characterEncoding=utf8&useSSL=false
+    username: root
+    password: root
+
+# mybatis-plus基本配置
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:com/starry/*/mapper/xml/*.xml
+#log日志地址/本地注册文件
+logging:
+  file:
+    path: ./logs/web
+#注册中心配置
+com:
+  alipay:
+    sofa:
+      rpc:
+        registry-address: zookeeper://localhost:8218
